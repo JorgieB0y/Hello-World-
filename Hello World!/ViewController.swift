@@ -10,6 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mainLabel: UILabel!
+    
+    var tapCount = 0
+    
+    @IBAction func surpriseButton(_ sender: Any) {
+        
+               mainLabel.text = "Hi There"
+        tapCount = tapCount + 1
+        
+        if tapCount >= 10 {
+            mainLabel.text = "You've pressed this too many times!"
+        }
+        
+    }
+    
+    @IBAction func buttonChangeAgain(_ sender: Any) { //Button under the main button that changes the main label
+        
+        mainLabel.text = "BUTTONS ARE COOL!"
+        tapCount = 0
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
