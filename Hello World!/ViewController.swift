@@ -12,25 +12,17 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mainLabel: UILabel!
     
-    var tapCount = 0 // Variable to keep count of how many times has "surprisedButton" been pressed
+    @IBOutlet weak var textField1: UITextField!
+    
+    @IBOutlet weak var textField2: UITextField!
+    
     
     @IBAction func surpriseButton(_ sender: Any) {
         
-               mainLabel.text = "Hi There"
-        tapCount = tapCount + 1 // this will have the button add one more to the variable tapCount
-        
-        if tapCount >= 11 {
-            mainLabel.text = "You've pressed this too many times!"
-        }
+               mainLabel.text = "You typed... \(Double(textField1.text!)! + Double(textField2.text!)!)" /*This is string interpolation between whatever the string or "double integer" is in the textfields, making them imperative via the ! so it's not optional and adding them together saving them in mainLabel*/
         
     }
     
-    @IBAction func buttonChangeAgain(_ sender: Any) { //Button under the main button that changes the main label
-        
-        mainLabel.text = "BUTTONS ARE COOL!"
-        tapCount = 0
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
