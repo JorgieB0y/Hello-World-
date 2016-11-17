@@ -12,14 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mainLabel: UILabel!
     
-    var tapCount = 0
+    var tapCount = 0 // Variable to keep count of how many times has "surprisedButton" been pressed
     
     @IBAction func surpriseButton(_ sender: Any) {
         
                mainLabel.text = "Hi There"
-        tapCount = tapCount + 1
+        tapCount = tapCount + 1 // this will have the button add one more to the variable tapCount
         
-        if tapCount >= 10 {
+        if tapCount >= 11 {
             mainLabel.text = "You've pressed this too many times!"
         }
         
